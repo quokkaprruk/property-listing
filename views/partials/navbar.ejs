@@ -1,0 +1,29 @@
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <a href="/" class="logo"> <img src="/media/logo.png" alt="logo" /></a>
+    </div>
+    <ul class="links">
+      <% if(title !== 'Home Page') {%>
+      <li><a href="/">Home</a></li>
+      <% } %>
+      <li><a href="/rentals">Rentals</a></li>
+      <li><a href="/log-in">Log in</a></li>
+      <li><a href="/sign-up">Sign in</a></li>
+    </ul>
+
+    <div class="toggle_btn">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </div>
+
+  <div class="dropdown_menu">
+    <!--open-->
+    <% if(title !== 'Home Page') {%>
+    <li><a href="/">Home</a></li>
+    <% } %>
+    <li><a href="/rentals">Rentals</a></li>
+    <li><a href="/log-in">Log in</a></li>
+    <li><a href="/sign-up">Sign up</a></li>
+  </div>
+</header>

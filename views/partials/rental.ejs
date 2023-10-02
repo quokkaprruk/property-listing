@@ -1,0 +1,20 @@
+<!--img,healine, number, price-->
+<% featuredRentals.forEach((featuredRental)=>{ %>
+
+<div class="property-card">
+  <div class="card-img">
+    <img
+      src="<%- featuredRental.imageUrl %>"
+      alt="<%= featuredRental.headline %>"
+    />
+  </div>
+  <h4><%= featuredRental.headline %></h4>
+  <span
+    >Sleeps <%= featuredRental.numSleeps %> : <%= featuredRental.numBedrroms
+    %>BR <%= featuredRental.numBathrroms %>BA $ <%= featuredRental.pricePerNight
+    %>/night
+  </span>
+  <!-- Sleeps 4 : 2BR 1BA $100/night -->
+</div>
+
+<% })%>

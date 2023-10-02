@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Montserrat:wght@200&family=Mulish:wght@200&family=Open+Sans:wght@300&family=Poppins:wght@300&display=swap");
+
+body {
+  min-height: 100vh;
+  background-color: rgb(251, 244, 237);
+  text-align: center;
+  justify-content: center;
+}
+
+/*Hero*/
+#hero {
+  background: linear-gradient(rgba(9, 5, 54, 0.1), rgba(5, 4, 46, 0.3)),
+    url("/media/hero.jpg");
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#hero h3 {
+  color: white;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+#hero p {
+  color: white;
+  font-size: 0.9rem;
+  line-height: 20px;
+  padding: 2rem;
+}
+
+#hero a {
+  text-decoration: none;
+  background-color: white;
+  font-weight: 500;
+  padding: 0.7rem;
+  border-radius: 30px;
+}
+#hero a:hover {
+  background-color: white;
+  font-weight: 700;
+  padding: 0.9rem;
+  transition: scale 0.2 ease;
+}
+
+/*contents*/
+#contents-container {
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+  line-height: 2rem;
+}
+#contents-container .content {
+  display: grid;
+  max-width: 300px;
+  align-items: center;
+  justify-content: center;
+}
+.content .icon img {
+  max-height: 50px;
+}
+/*features*/
+
+#feature-rentals {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 50vh;
+  width: 100%;
+  margin-bottom: 20vh;
+}
+
+#feature-rentals .property-card {
+  padding: 1.5rem;
+}
+
+.property-card .card-img img {
+  height: 35vh;
+  width: 350px;
+  border-radius: 10px;
+}
+
+.property-card .card-img img:hover {
+  cursor: pointer;
+}
+
+/*responsive*/
+@media (max-width: 1000px) {
+  #feature-rentals {
+    margin-bottom: 3rem;
+    margin-bottom: 27rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .property-card .card-img img {
+    height: 38vh;
+    width: 380px;
+  }
+  #contents-container {
+    display: grid;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    height: 100vh;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 770px) {
+  #feature-rentals {
+    margin-bottom: 3rem;
+    margin-bottom: 55rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .property-card .card-img img {
+    height: 43vh;
+    width: 430px;
+  }
+}
+@media (max-width: 350px) {
+}

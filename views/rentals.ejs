@@ -1,0 +1,38 @@
+
+  <body>
+    <%- include('partials/navbar') %>
+    <div class="city-province">
+      <h2>city and province</h2>
+    </div>
+    <div class="rentals-container">
+       
+      
+
+      <% allRentals.forEach((rental)=>{ %>
+      <div class="rentals-result">
+          <img src="<%- rental.imageUrl %>" alt="<%= rental.headline %>">
+
+          <h4> <%= rental.headline %></h4>
+          <ul>
+            <li>
+              <p>Sleeps <%= rental.numSleeps %> · <%= rental.numBedrooms %>BR · <%= rental.numBathrooms %> BA </p>
+              </li>
+              <li>
+                <span>$<%= rental.pricePerNight %></span> <p class="small-text">avg/night</p>
+              </li>
+
+          </ul>
+          
+        </div>
+        <% }) %>
+
+    </div>
+    <%- include ('partials/footer') %>
+  </body>
+  <script src="/js/dropdownMenu.js"></script>
+  </html>
+
+
+ 
+  
+  

@@ -1,27 +1,69 @@
+
 const express = require("express");
+const path = require("path");
+const expressLayouts = require("express-ejs-layouts");
+const rentalsDB = require("./models/rentals-db"); //import data
 const app = express();
-const ejs = require("ejs");
-const axios = require("axios");
-//controller
-/*home = index
-form
-listing page */
-const indexController = require("./controllers/indexController");
-const listingFormController = require("./controllers/listingFormController");
-const listingsController = require("./controllers/listingsController");
-//static file
-app.use(express.static("assets"));
-app.use(express.json());
 
-//tells Express to use EJS to dynamically generate HTML content
 app.set("view engine", "ejs");
+app.use(expressLayouts);
 
-//handle req
-app.get("/", indexController);
-app.get("/listingForm", listingFormController);
-app.get("/listings", listingsController);
+app.use(express.static(path.join(__dirname, "/assets")));
+app.use(express.static(path.join(__dirname, "/modules")));
 
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running at port ${PORT}`);
+
+app.set("layout", "layouts/main"); //render main page and took the body from home ejs
+app.get("/", function (req, res) {
+  const featuredRentals = rentalsDB.getFeaturedRentals(); //get data
+  res.render("home", {
+    featuredRentals, // featuredRental: featuredRental
+    title: "Home Page",
+    stylesheet: "/css/home.css",
+  });
 });
+
+app.get("/rentals", (req, res) => {
+  const allRentals = rentalsDB.getAllProperties();
+  res.render("rentals", {
+    allRentals,
+    title: "Rentals Page",
+    stylesheet: "/css/rentals.css",
+  });
+});
+
+app.get("/sign-up", (req, res) => {
+  res.render("signup", {
+    title: "Sign Up Page",
+    stylesheet: "/css/form.css",
+  });
+});
+
+app.get("/log-in", (req, res) => {
+  res.render("login", {
+    title: "Log In Page",
+    stylesheet: "/css/form.css",
+  });
+});
+
+
+app.use((req, res) => {
+  res.status(404).send("Page Not Found");
+});
+
+
+app.use(function (err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
+
+
+const HTTP_PORT = process.env.PORT || 8080;
+
+function onHttpStart() {
+  console.log("Express http server listening on: " + HTTP_PORT);
+}
+
+
+app.listen(HTTP_PORT, onHttpStart);
+
+

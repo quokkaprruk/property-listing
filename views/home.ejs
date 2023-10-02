@@ -1,0 +1,67 @@
+  
+  <body>
+   
+    <%- include('partials/navbar') %>
+    <main>
+      <div id="hero">
+        <!--image or video-->
+        <!--text will be place inside-->
+        <h3>Green Property</h3>
+        <p>
+          Wanda, where homeowners thrive and renters discover their ideal homes.
+        </p>
+        <div class="list-prop-btn">
+          <a href="/log-in" class="">List Your Property</a>
+        </div>
+      </div>
+
+      <div id="contents-container">
+        <!--grid Selling point-->
+        <div class="content">
+          <div class="icon">
+            <img src="/media/trust.png" alt="trust" />
+          </div>
+          <h4>Trust</h4>
+          <p>Reliable real estate, trustworthy tenants.</p>
+        </div>
+        <div class="content">
+          <div class="icon">
+            <img src="/media/peace.png" alt="peace" />
+          </div>
+          <h4>Peace of mind</h4>
+          <p>24/7 Supports by our customer service.</p>
+        </div>
+        <div class="content">
+          <div class="icon">
+            <img src="/media/town.png" alt="diverse" />
+          </div>
+          <h4>Diverse</h4>
+          <p>Offering more than 1 million of rental properties.</p>
+        </div>
+        <div class="content">
+          <div class="icon">
+            <img src="/media/friendly.png" alt="friendly" />
+          </div>
+          <h4>Friendly</h4>
+          <p>Ensuring a seamless experience for both parties.</p>
+        </div>
+      </div>
+      <h2>Feature Rentals</h2>
+      <div id="feature-rentals">
+        <!--img,healine, number, price-->
+        <!-- <div class="property-card">
+          <div class="card-img">
+            <img src="/media/10BR 5BA near beach.jpeg" alt="House near beach" />
+          </div>
+          <h4>House near beach</h4>
+          <span>Sleeps 4 : 2BR 1BA $100/night</span>
+        </div> -->
+        <%- include('partials/rental')%>
+       
+      </div>
+      <br />
+      <%- include('partials/footer') %>
+    </main>
+    <script src="/js/dropdownMenu.js"></script>
+  </body>
+</html>
