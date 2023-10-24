@@ -28,9 +28,11 @@ body {
   /* display: grid;
   grid-template-columns: repeat(1, 1fr); */
 }
-
+.city-province {
+  grid-column: 1 / -1; /* span all columns 1 is start, 1 is end*/
+}
 .city-province h2 {
-  padding-top: 8em;
+  padding-top: 4em;
   font-size: 24px;
   /* margin: 10px 0; dont!*/
 }

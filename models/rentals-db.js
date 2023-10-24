@@ -21,6 +21,17 @@ var properties = [
     featuredRental: false,
   },
   {
+    headline: "Cozy Lakeside Estate",
+    numSleeps: 2,
+    numBedrooms: 3,
+    numBathrooms: 1,
+    pricePerNight: 99.99,
+    city: "Tampa",
+    province: "Florida",
+    imageUrl: "/propertyImages/Lakeside Estate.jpeg",
+    featuredRental: false,
+  },
+  {
     headline: "Luxury Beachfront Villa",
     numSleeps: 6,
     numBedrooms: 3,
@@ -75,6 +86,17 @@ var properties = [
     imageUrl: "/propertyImages/Spacious Countryside Retreat.jpg", //no /assets/
     featuredRental: true,
   },
+  {
+    headline: "Seaside Cottage",
+    numSleeps: 5,
+    numBedrooms: 2,
+    numBathrooms: 1,
+    pricePerNight: 169.8,
+    city: "Tampa",
+    province: "Florida",
+    imageUrl: "/propertyImages/Seaside Cottage with Ocean Views.jpg",
+    featuredRental: false,
+  },
 ];
 
 module.exports.getAllProperties = () => {
@@ -90,6 +112,7 @@ module.exports.getRentalsByCityAndProvince = () => {
 
   properties.forEach((property) => {
     const { city, province } = property; //get the city+province from property
+    //const cityProvinceKey = `${city}, ${province}`;
     const cityProvinceKey = `${city}, ${province}`;
 
     if (!groupedRentals[cityProvinceKey]) {
